@@ -2,9 +2,9 @@
 // // // task 1
 // // ///////////////////////////////////////////////////////
 
-// const Account = function (login, email) {
-//   this.login = login;
-//   this.email = email;
+// const Account = function (obj) {
+//   this.login = obj.login;
+//   this.email = obj.email;
 // };
 
 // Account.prototype.getInfo = function () {
@@ -13,11 +13,17 @@
 
 // console.log(Account.prototype.getInfo); // function
 
-// const mango = new Account("Mangozedog", "mango@dog.woof");
+// const mango = new Account({
+//   login: "Mangozedog",
+//   email: "mango@dog.woof",
+// });
 
 // mango.getInfo(); // Login: Mangozedog, Email: mango@dog.woof
 
-// const poly = new Account("Poly", "poly@mail.com");
+// const poly = new Account({
+//   login: "Poly",
+//   email: "poly@mail.com",
+// });
 
 // poly.getInfo(); // Login: Poly, Email: poly@mail.com
 
@@ -25,10 +31,10 @@
 // // // task 2
 // // ///////////////////////////////////////////////////////
 
-// const User = function (name, age, followers) {
-//   this.name = name;
-//   this.age = age;
-//   this.followers = followers;
+// const User = function (obj) {
+//   this.name = obj.name;
+//   this.age = obj.age;
+//   this.followers = obj.followers;
 // };
 
 // User.prototype.getInfo = function () {
@@ -37,11 +43,19 @@
 //   );
 // };
 
-// const mango = new User("Mango", 2, 20);
+// const mango = new User({
+//   name: "Mango",
+//   age: 2,
+//   followers: 20,
+// });
 
 // mango.getInfo(); // User Mango is 2 years old and has 20 followers
 
-// const poly = new User("Poly", 3, 17);
+// const poly = new User({
+//   name: "Poly",
+//   age: 3,
+//   followers: 17,
+// });
 
 // poly.getInfo(); // User Poly is 3 years old and has 17 followers
 
@@ -56,8 +70,8 @@
 //   getItems() {
 //     return this.items;
 //   }
-//   addItem(...arr) {
-//     this.items.push(...arr);
+//   addItem(arr) {
+//     this.items.push(arr);
 //   }
 //   removeItem(item) {
 //     this.items.splice(this.items.indexOf(item), 1);
@@ -75,13 +89,10 @@
 // const items = storage.getItems();
 // console.table(items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор" ]
 
-// storage.addItem("Дроид", "1", "2");
+// storage.addItem("Дроид");
 // console.table(storage.items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор", "Дроид" ]
 
 // storage.removeItem("Пролонгер");
-// console.table(storage.items); // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]
-
-// storage.removeItem("1");
 // console.table(storage.items); // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]
 
 // // ///////////////////////////////////////////////////////
